@@ -1,0 +1,28 @@
+{
+    "name"    : "Test Opponent",
+    "life"    : 150,
+    "defense" : 25,
+    "attacks" : 
+    {
+        "punch" : 
+        {
+            "description" : "Punch Out !!!", 
+            "attack" : 25,
+            "precision" : 75
+        },
+        "kick" :
+        {
+            "description" : "Like in battery",
+            "attack" : 50,
+            "precision" : 50
+        }
+    },
+    "actions" :
+    {
+        "heal" : 
+        {
+            "description" : "Restore 30PV",
+            "precision" : 80
+        }
+    }
+}

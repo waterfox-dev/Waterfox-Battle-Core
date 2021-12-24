@@ -1,0 +1,80 @@
+@import url('http://fonts.cdnfonts.com/css/common-pixel');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+
+body
+{
+    background-color: black;
+    color : orange;
+    font-family: 'VT323', monospace;
+    font-size: 30px;
+}
+
+.battleScreen
+{
+    margin-left: 25%;
+    margin-right: 25%;
+
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
+}
+
+.opponentName
+{
+    font-size: 40px;
+    margin-bottom: 2%;
+
+    text-align: center;
+    
+}
+
+.lifebar
+{
+    margin-top: 0%;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+    font-size: 15px;
+
+    background-color: green;
+
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
+}
+
+.opponentImage
+{
+    width: 12%;
+}
+
+.opponentPlace
+{
+    text-align: center;
+}
+
+.actionDiv
+{
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-bottom: 5%;
+
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
+}
+
+.actionSelection
+{
+    margin-right: 75%;
+
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
+
+    text-align: center;
+}
+
