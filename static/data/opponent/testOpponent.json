@@ -3,26 +3,26 @@
     "life"    : 150,
     "defense" : 25,
     "attacks" : 
-    {
-        "punch" : 
+    [
         {
+            "name" : "Punch", 
             "description" : "Punch Out !!!", 
             "attack" : 25,
             "precision" : 75
         },
-        "kick" :
         {
+            "name" : "kick",
             "description" : "Like in battery",
             "attack" : 50,
             "precision" : 50
         }
-    },
+    ],
     "actions" :
-    {
-        "heal" : 
+    [
         {
+            "name" : "heal",
             "description" : "Restore 30PV",
             "precision" : 80
         }
-    }
+    ]
 }

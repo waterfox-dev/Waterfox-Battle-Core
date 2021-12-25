@@ -7,14 +7,19 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="{{url_for('static', filename = 'scripts/opponent.js')}}"></script>
     <script>
-        let dataOpponent = new getOpponentData('testOpponent');
+        var currentOpponent;
+        $.getJSON('../static/data/opponent/testOpponent.json',
+        function(json)
+        {
+            currentOpponent = json;
+        });       
     </script>
 </head>
 
 <body>
     <div class="battleScreen">
         <p class="opponentName">Test Opponent</p>
-        <div class="lifebar">
+        <div class="lifebar" id = "lifebar">
             <p></p>
         </div>
         <div class="opponentPlace">
