@@ -1,0 +1,33 @@
+{
+    "name"    : "Simple Player",
+    "life"    : 250,
+    "defense" : 25,
+    "attacks" : 
+    [
+        {
+            "name" : "Punch", 
+            "description" : "A violent push", 
+            "attack" : 40,
+            "precision" : 60
+        },
+        {
+            "name" : "Kick",
+            "description" : "Use your feet",
+            "attack" : 50,
+            "precision" : 50
+        }
+    ],
+    "actions" :
+    [
+        {
+            "name" : "Eat Cookies",
+            "description" : "Restore 30PV",
+            "precision" : 80
+        },
+        {
+            "name" : "Drink Water",
+            "description" : "Restore 10PV",
+            "precision" : 100      
+        }
+    ]
+}

@@ -6,9 +6,20 @@
 body
 {
     background-color: black;
-    color : orange;
+    color: orange;
     font-family: 'VT323', monospace;
     font-size: 30px;
+}
+
+button
+{
+    font-family: 'VT323', monospace;
+    background-color: black;
+    color: orange;
+    font-size: 25px;
+    border: none;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .battleScreen
@@ -69,7 +80,6 @@ body
 
 .actionSelection
 {
-    margin-right: 75%;
 
     border: solid;
     border-color: grey;
@@ -77,4 +87,15 @@ body
 
     text-align: center;
 }
+
+.actionDescription
+{
+
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
+
+    text-align: center;
+}
+
 

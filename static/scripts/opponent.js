@@ -1,8 +1,8 @@
-function reduceLife(point, opponentObject, maxLife)
+function reduceLife(point, opponentObject, maxLen, maxLife)
 {
     opponentObject.life -= point;
-    percent = (maxLife * 5) / opponentObject.life * 2
-    document.getElementById("lifebar").style.marginRight = `${percent}%`
+    newSize = (opponentObject.life * maxLen) / maxLife
+    document.getElementById("lifebar").clientWidth = `${newSize}px`
 }
 
 function choose(choices) 

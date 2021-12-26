@@ -6,40 +6,42 @@
     <link href="{{url_for('static', filename = 'styles/battle.css')}}" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="{{url_for('static', filename = 'scripts/opponent.js')}}"></script>
-    <script>
-        var currentOpponent;
-        $.getJSON('../static/data/opponent/testOpponent.json',
-        function(json)
-        {
-            currentOpponent = json;
-        });       
-    </script>
+    <script src="{{url_for('static', filename = 'scripts/text.js')}}"></script>
+    <script src="{{url_for('static', filename = 'scripts/audio.js')}}"></script>
+    <script src="{{url_for('static', filename = 'scripts/attack.js')}}"></script>
 </head>
 
 <body>
     <div class="battleScreen">
         <p class="opponentName">Test Opponent</p>
-        <div class="lifebar" id = "lifebar">
+        <div class="lifebar" id="lifebar">
             <p></p>
         </div>
         <div class="opponentPlace">
             <img class="opponentImage" src="{{url_for('static', filename = 'images/testOpponent.png')}}">
         </div>
         <div class="actionDiv">
-            <div class="actionSelection">
-                <div class="attacks">
-                    <p class="action">Attacks</p>
-                </div>
-                <div class="actions">
-                    <p class="action">Actions</p>
-                </div>
-                <div class="bag">
-                    <p class="action">Bag</p>
-                </div>
+            <div class="actionDescription">
+                <p id="actionDescription"></p>
             </div>
-            <div class="actionDescription"></div>
+            <div class="actionSelection">
+                <button onclick="displayAttacks(currentPlayer)">Attacks</button><button onclick="displayActions(currentPlayer)">Actions</button>
+            </div>
         </div>
-    </div>
+        <script>
+            var maxWidth = document.getElementById('lifebar').clientWidth;
+            var currentPlayer;
+            var currentOpponent;
+            
+            $.getJSON('../static/data/opponent/testOpponent.json',
+                function (json) {
+                    currentOpponent = json;
+                });
+            $.getJSON('../static/data/player/testPlayer.json',
+                function (json) {
+                    currentPlayer = json;
+                })         
+        </script>
 </body>
 
 </html>
