@@ -1,7 +1,9 @@
 {
     "name"    : "Test Opponent",
+    "type"    : "opponent",
     "life"    : 150,
     "defense" : 25,
+    "maxLife" : 150,
     "attacks" : 
     [
         {

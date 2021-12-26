@@ -17,9 +17,11 @@ button
     background-color: black;
     color: orange;
     font-size: 25px;
-    border: none;
+    border-width: 0.1px;
+    border-color: orange;
     margin-left: 5%;
     margin-right: 5%;
+    border: solid;
 }
 
 .battleScreen
@@ -27,7 +29,7 @@ button
     margin-left: 25%;
     margin-right: 25%;
 
-    border: solid;
+    border: none;
     border-color: grey;
     border-width: 0.5px;
 }
@@ -41,11 +43,27 @@ button
     
 }
 
-.lifebar
+.opponentLifebar
 {
     margin-top: 0%;
     margin-left: 5%;
     margin-right: 5%;
+    margin-bottom: 5%;
+
+    font-size: 15px;
+
+    background-color: green;
+
+    border: solid;
+    border-color: grey;
+    border-width: 0.5px;
+}
+
+.playerLifebar
+{
+    margin-top: 0%;
+    margin-left: 15%;
+    margin-right: 15%;
     margin-bottom: 5%;
 
     font-size: 15px;
@@ -73,7 +91,7 @@ button
     margin-right: 5%;
     margin-bottom: 5%;
 
-    border: solid;
+    border: none;
     border-color: grey;
     border-width: 0.5px;
 }
@@ -81,7 +99,7 @@ button
 .actionSelection
 {
 
-    border: solid;
+    border: none;
     border-color: grey;
     border-width: 0.5px;
 
@@ -91,11 +109,18 @@ button
 .actionDescription
 {
 
-    border: solid;
+    border: none;
     border-color: grey;
     border-width: 0.5px;
 
     text-align: center;
 }
 
-
+.titlePopup
+{
+    height: 100%;
+    position: absolute;
+    text-align: center;
+    margin-left: 20%;
+    background-color: black;
+}

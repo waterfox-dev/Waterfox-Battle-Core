@@ -1,10 +1,10 @@
-function opponentAttack(opponentObject, attackObject)
+function attack(victimObject, senderObject, attackObject, puissance)
 {
     var textZone = document.getElementById('actionDescription')
-    textZone.innerText = `${opponentObject.name} use ${attackObject.name} ! \n ${attackObject.description} `
+    textZone.innerText = `${senderObject.name} use ${attackObject.name} against ${victimObject.name}! ${victimObject.name} lose ${puissance} PV\n`
 }
 
-function displayAttacks(playerObject)
+function displayAttacks(playerObject, opponentObject)
 {
     var textZone = document.getElementById('actionDescription')
     textZone.innerText = ''
@@ -12,6 +12,7 @@ function displayAttacks(playerObject)
     {
         let btn = document.createElement('button')
         btn.innerHTML = playerObject.attacks[element].name;
+        btn.onclick = function(){doAttack(getAttack(playerObject.attacks[element].name, playerObject),opponentObject, playerObject);}
         textZone.appendChild(btn);
     }
 }

@@ -1,7 +1,9 @@
 {
     "name"    : "Simple Player",
+    "type"    : "player",
     "life"    : 250,
     "defense" : 25,
+    "maxLife" : 250, 
     "attacks" : 
     [
         {
