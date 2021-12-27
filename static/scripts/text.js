@@ -29,3 +29,9 @@ function displayActions(playerObject)
         textZone.appendChild(document.createElement('br'))
     }
 }
+
+function initializeText(opponentName)
+{
+    document.getElementById("textPopup").innerHTML = `Battle against ${opponentName}`;
+    document.getElementById("opponentName").innerHTML = opponentName
+}

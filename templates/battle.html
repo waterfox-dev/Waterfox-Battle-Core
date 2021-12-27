@@ -10,27 +10,20 @@
         }
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <script src="{{url_for('static', filename = 'scripts/opponent.js')}}"></script> 
+    <script src="{{url_for('static', filename = 'scripts/opponent.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/audio.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/life.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/attacks.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/text.js')}}"></script>
-    <script>
-        function hidePopup()
-        {
-            document.getElementById('titlePopup').style.visibility = "hidden";
-            launchTheme('testOpponent')
-        }
-    </script>
 </head>
 
 <body>
-    <div class="titlePopup" id = "titlePopup">
-        <h1>Battle against Test Opponent</h1>
+    <div class="titlePopup" id="titlePopup">
+        <h1 id="textPopup"></h1>
         <button onclick="hidePopup()">Let's Go</button>
     </div>
     <div class="battleScreen">
-        <p class="opponentName">Test Opponent</p>
+        <p class="opponentName" id="opponentName"></p>
         <div class="opponentLifebar" id="opponentLifebar">
             <p></p>
         </div>
@@ -42,16 +35,17 @@
                 <p id="actionDescription"></p>
             </div>
             <div class="actionSelection">
-                <button onclick="displayAttacks(currentPlayer, currentOpponent)">Attacks</button><button onclick="displayActions(currentPlayer)">Actions</button>
+                <button onclick="displayAttacks(currentPlayer, currentOpponent)">Attacks</button><button
+                    onclick="displayActions(currentPlayer)">Actions</button>
             </div>
         </div>
         <div class="playerLifebar" id="playerLifebar">
             <p></p>
-        </div>  
+        </div>
         <script>
-            var currentPlayer;
-            var currentOpponent;
-            
+            let currentPlayer;
+            let currentOpponent;
+
             $.getJSON('../static/data/opponent/testOpponent.json',
                 function (json) {
                     currentOpponent = json;
@@ -59,9 +53,14 @@
             $.getJSON('../static/data/player/testPlayer.json',
                 function (json) {
                     currentPlayer = json;
-                })         
+                });
+            function hidePopup() {
+                document.getElementById('titlePopup').style.visibility = "hidden";
+                launchTheme('testOpponent')
+            }
         </script>
     </div>
+
 </body>
 
 </html>
