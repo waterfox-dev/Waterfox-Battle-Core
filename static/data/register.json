@@ -1,0 +1,7 @@
+{
+    "TestSet" : {
+        "opponent" : "../static/data/opponent/testOpponent.json",
+        "player" : "../static/data/player/testPlayer.json", 
+        "name" : "Test Opponent"
+    }
+}

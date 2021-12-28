@@ -24,5 +24,7 @@
       "description": "Restore 30PV",
       "precision": 80
     }
-  ]
+  ], 
+  "theme" : "testOpponent", 
+  "sprite" : "../static/images/testOpponent.png"
 }

@@ -28,7 +28,7 @@
             <p></p>
         </div>
         <div class="opponentPlace">
-            <img class="opponentImage" src="{{url_for('static', filename = 'images/testOpponent.png')}}">
+            <img class="opponentImage" id="opponentImage">
         </div>
         <div class="actionDiv">
             <div class="actionDescription">
@@ -45,18 +45,25 @@
         <script>
             let currentPlayer;
             let currentOpponent;
+            var opponentPath = '{{opponent}}';
+            var playerPath = '{{player}}';
+    
+            initializeText('{{opponentName}}')
+    
 
-            $.getJSON('../static/data/opponent/testOpponent.json',
-                function (json) {
-                    currentOpponent = json;
-                });
-            $.getJSON('../static/data/player/testPlayer.json',
-                function (json) {
-                    currentPlayer = json;
-                });
             function hidePopup() {
                 document.getElementById('titlePopup').style.visibility = "hidden";
-                launchTheme('testOpponent')
+                
+                $.getJSON(opponentPath,
+                function (json) {
+                    currentOpponent = json;
+                    document.getElementById('opponentImage').src = currentOpponent.sprite
+                    launchTheme(currentOpponent.theme);
+                });
+                $.getJSON(playerPath,
+                    function (json) {
+                        currentPlayer = json;
+                });
             }
         </script>
     </div>
