@@ -1,0 +1,31 @@
+{
+    "name": "α Opponent",
+    "type": "opponent",
+    "life": 500,
+    "defense": 50,
+    "maxLife": 500,
+    "attacks": [
+      {
+        "name": "Write Code",
+        "description": "Like a really nerd",
+        "attack": 75,
+        "precision": 80
+      },
+      {
+        "name": "Push to github",
+        "description": "Because G I T H U B !",
+        "attack": 80,
+        "precision": 60
+      }
+    ],
+    "actions": [
+      {
+        "name": "Drink Coffee",
+        "description": "Restore 40PV",
+        "precision": 80
+      }
+    ], 
+    "theme" : "alphaOpponent", 
+    "sprite" : "../static/images/alphaOpponent.png"
+  }
+  

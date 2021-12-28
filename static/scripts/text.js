@@ -17,7 +17,7 @@ function displayAttacks(playerObject, opponentObject)
     }
 }
 
-function displayActions(playerObject)
+function displayActions(playerObject, opponentObject)
 {
     var textZone = document.getElementById('actionDescription')
     textZone.innerText = ''
@@ -25,6 +25,10 @@ function displayActions(playerObject)
     {
         let btn = document.createElement('button')
         btn.innerHTML = `${playerObject.actions[element].name} - ${playerObject.actions[element].description}` ;
+        btn.onclick = function(){
+            window[playerObject.actions[element].codename](playerObject, opponentObject);
+            doAttack(randomAttack(opponentObject), playerObject, opponentObject);
+        }
         textZone.appendChild(btn);
         textZone.appendChild(document.createElement('br'))
     }

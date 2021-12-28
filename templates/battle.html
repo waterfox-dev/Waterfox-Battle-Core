@@ -11,6 +11,7 @@
     </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="{{url_for('static', filename = 'scripts/opponent.js')}}"></script>
+    <script src="{{url_for('static', filename = 'scripts/actions.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/audio.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/life.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/attacks.js')}}"></script>
@@ -36,7 +37,7 @@
             </div>
             <div class="actionSelection">
                 <button onclick="displayAttacks(currentPlayer, currentOpponent)">Attacks</button><button
-                    onclick="displayActions(currentPlayer)">Actions</button>
+                    onclick="displayActions(currentPlayer, currentOpponent)">Actions</button>
             </div>
         </div>
         <div class="playerLifebar" id="playerLifebar">

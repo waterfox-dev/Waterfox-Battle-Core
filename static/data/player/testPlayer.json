@@ -23,11 +23,13 @@
     [
         {
             "name" : "Eat Cookies",
+            "codename" : "eatCookies",
             "description" : "Restore 30PV",
             "precision" : 80
         },
         {
             "name" : "Drink Water",
+            "codename" : "drinkWater",
             "description" : "Restore 10PV",
             "precision" : 100      
         }

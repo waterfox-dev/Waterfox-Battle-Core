@@ -17,13 +17,6 @@
       "attack": 50,
       "precision": 50
     }
-  ],
-  "actions": [
-    {
-      "name": "heal",
-      "description": "Restore 30PV",
-      "precision": 80
-    }
   ], 
   "theme" : "testOpponent", 
   "sprite" : "../static/images/testOpponent.png"
