@@ -24,7 +24,8 @@ body {
 }
 
 .creatorForm {
-    margin-left : 30%
+    margin-left : 30% ;
+    margin-right : 30%;
 }
 
 .nameInput {
@@ -44,6 +45,14 @@ body {
 }
 
 .defenseInput {
+    border: solid;
+    background-color: black;
+    font-size: 25px;
+    color: orange;
+    font-family: "VT323", monospace;
+}
+
+.attackName {
     border: solid;
     background-color: black;
     font-size: 25px;

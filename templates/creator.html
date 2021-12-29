@@ -5,11 +5,12 @@
 <head>
     <title>Waterfox Battle Core</title>
     <link href="{{url_for('static', filename='styles/creator.css')}}" rel="stylesheet">
+    <script src="{{url_for('static', filename = 'scripts/creator.js')}}"></script>
 </head>
 
 <body>
     <h1 class="creatorTitle">Opponent Creator</h1>
-    <form class="creatorForm">
+    <form class="creatorForm" id ="creatorForm">
         <label for="nameInput">Name</label>
         <input type="text" name="nameInput" id="nameInput" class="nameInput" required>
         <br>
