@@ -1,31 +1,26 @@
-function attack(victimObject, senderObject, attackObject, puissance)
-{
+function attack(victimObject, senderObject, attackObject, puissance) {
     var textZone = document.getElementById('actionDescription')
     textZone.innerText = `${senderObject.name} use ${attackObject.name} against ${victimObject.name}! ${victimObject.name} lose ${puissance} PV\n`
 }
 
-function displayAttacks(playerObject, opponentObject)
-{
+function displayAttacks(playerObject, opponentObject) {
     var textZone = document.getElementById('actionDescription')
     textZone.innerText = ''
-    for(element in playerObject.attacks)
-    {
+    for (element in playerObject.attacks) {
         let btn = document.createElement('button')
         btn.innerHTML = playerObject.attacks[element].name;
-        btn.onclick = function(){doAttack(getAttack(playerObject.attacks[element].name, playerObject),opponentObject, playerObject);}
+        btn.onclick = function () { doAttack(getAttack(playerObject.attacks[element].name, playerObject), opponentObject, playerObject); }
         textZone.appendChild(btn);
     }
 }
 
-function displayActions(playerObject, opponentObject)
-{
+function displayActions(playerObject, opponentObject) {
     var textZone = document.getElementById('actionDescription')
     textZone.innerText = ''
-    for(element in playerObject.actions)
-    {
+    for (element in playerObject.actions) {
         let btn = document.createElement('button')
-        btn.innerHTML = `${playerObject.actions[element].name} - ${playerObject.actions[element].description}` ;
-        btn.onclick = function(){
+        btn.innerHTML = `${playerObject.actions[element].name} - ${playerObject.actions[element].description}`;
+        btn.onclick = function () {
             window[playerObject.actions[element].codename](playerObject, opponentObject);
             doAttack(randomAttack(opponentObject), playerObject, opponentObject);
         }
@@ -34,8 +29,7 @@ function displayActions(playerObject, opponentObject)
     }
 }
 
-function initializeText(opponentName)
-{
+function initializeText(opponentName) {
     document.getElementById("textPopup").innerHTML = `Battle against ${opponentName}`;
     document.getElementById("opponentName").innerHTML = opponentName
 }

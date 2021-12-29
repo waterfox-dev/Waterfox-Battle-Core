@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    <title>Waterfox Battle Core</title>
+    <link href="{{url_for('static', filename='styles/creator.css')}}" rel="stylesheet">
+</head>
+
+<body>
+    <h1 class="creatorTitle">Opponent Creator</h1>
+    <form class="creatorForm">
+        <label for="nameInput">Name</label>
+        <input type="text" name="nameInput" id="nameInput" class="nameInput" required>
+        <br>
+        <label for="lifeInput">Life</label>
+        <input type="number" name="lifeInput" id="lifeInput" class="lifeInput" required>
+        <br>
+        <label for="defenseInput">Defense</label>
+        <input type="number" name="defenseInput" id="defenseInput" class="defenseInput" required>
+        <br>
+        <label for="themeInput">Theme</label>
+        <input type="file" name="themeInput" id="themeInput" class="themeInput" required>
+    </form>
+</body>
+
+</html>

@@ -35,3 +35,7 @@ def battle():
     except CodeNotFound :
         return render_template('index.html', message = 'Code Not Found')
     
+    
+@app.route('/creator')
+def creator():
+    return render_template('creator.html')

@@ -8,6 +8,19 @@ body {
   font-size: 30px;
 }
 
+button {
+    font-family: "VT323", monospace;
+    background-color: black;
+    color: orange;
+    font-size: 25px;
+    border-width: 0.1px;
+    border-color: orange;
+    margin-left: 5%;
+    margin-right: 5%;
+    border: solid;
+}
+
+
 .coreTitle {
   margin-left: 25%;
   margin-right: 25%;

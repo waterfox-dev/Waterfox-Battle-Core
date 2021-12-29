@@ -10,12 +10,17 @@
 <body>
     <h1 class="coreTitle">Waterfox Battle Core</h1>
 
-    <form method='POST' class='codeForm' action = {{url_for('battle')}}>
+    <form method='POST' class='codeForm' action = "{{url_for('battle')}}">
         <h2 class="formTitle">Enter a code</h2>
         <input type='text' class='codeInput' placeholder="CODE" name = "code" id = "code">
         <br>
         <br>
         <input type='submit' class='submitInput' value="Launch !">
+    </form>
+    <br>
+    <br>
+    <form class = 'codeForm' action = "{{url_for('creator')}}">
+        <input type='submit' class='submitInput' value="Go to the creator">
     </form>
 
     <p style="text-align: center;">{{message}}</p> 
