@@ -1,18 +1,29 @@
 from re import T
 from flask import Flask, render_template, request
 import json
+import paramiko
+
 
 #Variables
 app = Flask(__name__)
-ver = '0.3'
+ver = '0.3.5'
 dev = True
+ser = False
+
+#Try to run as server instance
+try :
+    with open('private/serverLog.json', 'r', encoding='utf8') as log :
+        log = dict(json.load(log))
+        ser = True
+except FileNotFoundError :
+    pass
 
 #Classes 
 class CodeNotFound(Exception):
     pass
 
 #Functions
-def get_path(code : str) -> tuple :
+def get_path(code : str) :
     with open('static/data/register.json', 'r', encoding='utf8') as register :
         register = dict(json.load(register))
     
@@ -20,7 +31,18 @@ def get_path(code : str) -> tuple :
         if key == code :
             return(register[key]["opponent"], register[key]["player"], register[key]["name"])
     raise CodeNotFound(f'{code} not found in static/data/register.json')
-        
+
+def upload_to_server(localpath : str) :
+    ssh = paramiko.SSHClient()
+    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+    ssh.connect(log['host'], log['port'], log['username'], log['password'])
+
+    transfer = ssh.open_sftp()
+    path = 'wwww/static/musics'
+    transfer.put(localpath, path)
+
+    transfer.close()
+    ssh.close()
 
 #Router
 @app.route('/')
