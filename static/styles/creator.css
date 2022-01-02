@@ -59,3 +59,35 @@ body {
     color: orange;
     font-family: "VT323", monospace;
 }
+
+.themeInput {
+    background-color: black;
+    border: solid;
+    font-size: 15px;
+    color: orange;
+    font-family: "VT323", monospace;
+}
+
+.spriteInput {
+    background-color: black;
+    border: solid;
+    font-size: 15px;
+    color: orange;
+    font-family: "VT323", monospace;
+}
+
+.newAttack {
+    background-color: black;
+    border: solid;
+    font-size: 25px;
+    color: orange;
+    font-family: "VT323", monospace;
+}
+
+.submitForm {
+    background-color: black;
+    border: solid;
+    font-size: 25px;
+    color: orange;
+    font-family: "VT323", monospace;
+}

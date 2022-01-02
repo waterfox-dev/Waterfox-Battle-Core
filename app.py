@@ -4,7 +4,7 @@ import json
 
 #Variables
 app = Flask(__name__)
-ver = '0.2'
+ver = '0.3'
 dev = True
 
 #Classes 
@@ -35,7 +35,12 @@ def battle():
     except CodeNotFound :
         return render_template('index.html', message = 'Code Not Found')
     
-    
 @app.route('/creator')
 def creator():
     return render_template('creator.html')
+
+@app.route('/creator_statement', methods = ['GET', 'POST'])
+def creator_statement():
+   result = dict(request.form)
+   print(result)
+   return render_template('index.html')

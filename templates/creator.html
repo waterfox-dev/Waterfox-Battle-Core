@@ -10,7 +10,7 @@
 
 <body>
     <h1 class="creatorTitle">Opponent Creator</h1>
-    <form class="creatorForm" id ="creatorForm">
+    <form class="creatorForm" id="creatorForm" method="POST" action="{{url_for('creator_statement')}}">
         <label for="nameInput">Name</label>
         <input type="text" name="nameInput" id="nameInput" class="nameInput" required>
         <br>
@@ -21,7 +21,14 @@
         <input type="number" name="defenseInput" id="defenseInput" class="defenseInput" required>
         <br>
         <label for="themeInput">Theme</label>
-        <input type="file" name="themeInput" id="themeInput" class="themeInput" required>
+        <input type="file" name="themeInput" id="themeInput" class="themeInput" accept=".ogg" required>
+        <br>
+        <label for="spriteInput">Sprite</label>
+        <input type="file" name="spriteInput" id="spriteInput" class="spriteInput" accept=".png" required>
+        <br>
+        <button class="newAttack" id="newAttack" class="newInput" name="newInput" onclick="createAttackField()">Add A New Attack</button>
+        <br>
+        <input type="submit" class="submitForm" value="Enregistrer">
     </form>
 </body>
 
