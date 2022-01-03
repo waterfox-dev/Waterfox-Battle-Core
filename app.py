@@ -22,6 +22,9 @@ except FileNotFoundError :
 class CodeNotFound(Exception):
     pass
 
+class NotServerMode(Exception):
+    pass
+
 #Functions
 def get_path(code : str) :
     with open('static/data/register.json', 'r', encoding='utf8') as register :
@@ -32,13 +35,16 @@ def get_path(code : str) :
             return(register[key]["opponent"], register[key]["player"], register[key]["name"])
     raise CodeNotFound(f'{code} not found in static/data/register.json')
 
-def upload_to_server(localpath : str) :
+def upload_to_server(localpath : str, name : str) :
+    if not ser :
+        raise NotServerMode("WBC not recognized as online server instance")
+        
     ssh = paramiko.SSHClient()
     ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
     ssh.connect(log['host'], log['port'], log['username'], log['password'])
 
     transfer = ssh.open_sftp()
-    path = 'wwww/static/musics'
+    path = f'/home/ufqkcos/www/{name}.{localpath[-3]:}'
     transfer.put(localpath, path)
 
     transfer.close()
