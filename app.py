@@ -10,6 +10,8 @@ ver = '0.3.5'
 dev = True
 ser = False
 
+app.config['MAX_CONTENT_PATH'] = 500000
+
 #Try to run as server instance
 try :
     with open('private/serverLog.json', 'r', encoding='utf8') as log :
@@ -50,6 +52,16 @@ def upload_to_server(localpath : str, name : str) :
     transfer.close()
     ssh.close()
 
+def create_opponent(data_dict : dict, name : str):
+    with open('/static/data/opponent', 'w', encoding='utf8') as n_object :
+        n_object['name'] = data_dict['nameInput']
+        n_object['type'] = "opponent"
+        n_object['life'] = data_dict['lifeInput']
+        n_object['defense'] = data_dict['defenseInput']
+        n_object['maxLife'] = data_dict['lifeInput']
+        n_object['theme'] = data_dict['themeInput'][:3]
+
+
 #Router
 @app.route('/')
 def index():
@@ -70,5 +82,6 @@ def creator():
 @app.route('/creator_statement', methods = ['GET', 'POST'])
 def creator_statement():
    result = dict(request.form)
-   print(result)
+   print(request.files)
+   file = request.files['themeInput']
    return render_template('index.html')

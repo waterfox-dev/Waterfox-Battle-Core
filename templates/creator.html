@@ -10,9 +10,15 @@
 
 <body>
     <h1 class="creatorTitle">Opponent Creator</h1>
-    <form class="creatorForm" id="creatorForm" method="POST" action="{{url_for('creator_statement')}}">
+    <form class="creatorForm" id="creatorForm" method="POST" action="{{url_for('creator_statement')}}"  enctype = "multipart/form-data">
         <label for="nameInput">Name</label>
         <input type="text" name="nameInput" id="nameInput" class="nameInput" required>
+        <br>
+        <label for="fileName">Filename</label>
+        <input type="text" name="fileName" id="fileName" class="nameInput" required>
+        <br>
+        <label for="publicCode">Public Code</label>
+        <input type="text" name="publicCode" id="publicCode" class="nameInput" required>
         <br>
         <label for="lifeInput">Life</label>
         <input type="number" name="lifeInput" id="lifeInput" class="lifeInput" required>
