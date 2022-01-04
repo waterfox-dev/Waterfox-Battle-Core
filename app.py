@@ -53,13 +53,18 @@ def upload_to_server(localpath : str, name : str) :
     ssh.close()
 
 def create_opponent(data_dict : dict, name : str):
-    with open('/static/data/opponent', 'w', encoding='utf8') as n_object :
-        n_object['name'] = data_dict['nameInput']
-        n_object['type'] = "opponent"
-        n_object['life'] = data_dict['lifeInput']
-        n_object['defense'] = data_dict['defenseInput']
-        n_object['maxLife'] = data_dict['lifeInput']
-        n_object['theme'] = data_dict['themeInput'][:3]
+    file = open(f'static/data/opponent/{name}.json', 'x')
+    print(data_dict)
+    n_object = {}
+    n_object['name'] = data_dict['nameInput']
+    n_object['type'] = "opponent"
+    n_object['life'] = data_dict['lifeInput']
+    n_object['defense'] = data_dict['defenseInput']
+    n_object['maxLife'] = data_dict['lifeInput']
+    n_object['theme'] = data_dict['themeInput'][:-4]
+    json.dump(n_object, file)
+    file.close()
+        
 
 
 #Router
@@ -81,7 +86,16 @@ def creator():
 
 @app.route('/creator_statement', methods = ['GET', 'POST'])
 def creator_statement():
-   result = dict(request.form)
-   print(request.files)
-   file = request.files['themeInput']
+    
+   result      = dict(request.form)
+   theme_file  = request.files['themeInput']
+   sprite_file = request.files['spriteInput']
+   
+   result['themeInput'] = theme_file.filename
+   
+   theme_file.save(f"static/musics/{result['fileName']}.ogg")
+   sprite_file.save(f"static/images/{result['fileName']}.png")
+   
+   create_opponent(result, result['fileName'])
+   
    return render_template('index.html')
