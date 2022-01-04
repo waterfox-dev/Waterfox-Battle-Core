@@ -1,13 +1,17 @@
 {
-    "TestSet" : {
-        "opponent" : "../static/data/opponent/testOpponent.json",
-        "player" : "../static/data/player/testPlayer.json", 
-        "name" : "Test Opponent"
+    "TestSet": {
+        "opponent": "../static/data/opponent/testOpponent.json",
+        "player": "../static/data/player/testPlayer.json",
+        "name": "Test Opponent"
     },
-
-    "α" : {
-        "opponent" : "../static/data/opponent/alphaOpponent.json",
-        "player" : "../static/data/player/testPlayer.json", 
-        "name" : "α Opponent" 
+    "\u03b1": {
+        "opponent": "../static/data/opponent/alphaOpponent.json",
+        "player": "../static/data/player/testPlayer.json",
+        "name": "\u03b1 Opponent"
+    },
+    "FinalTest": {
+        "opponent": "../static/data/opponent/Test.ogg.json",
+        "player": "../static/data/player/testPlayer.json",
+        "name": "Final Test"
     }
 }
