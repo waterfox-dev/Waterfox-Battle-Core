@@ -54,7 +54,6 @@ def upload_to_server(localpath : str, name : str) :
 
 def create_opponent(data_dict : dict, name : str):
     file = open(f'static/data/opponent/{name}.json', 'x')
-    print(data_dict)
     n_object = {}
     n_object['name'] = data_dict['nameInput']
     n_object['type'] = "opponent"
