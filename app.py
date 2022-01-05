@@ -53,7 +53,6 @@ def create_opponent(data_dict : dict, name : str):
     file.close()
 
     with open('static/data/register.json', 'r', encoding='utf8') as r_file :
-        print(data_dict)
         r_file = json.load(r_file)
         r_file[data_dict['publicCode']] = {
             'opponent' : f"../static/data/opponent/{data_dict['fileName']}.json",

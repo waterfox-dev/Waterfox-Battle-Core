@@ -1,9 +1,9 @@
 {
   "name": "Red Hat",
   "type": "opponent",
-  "life": 150,
+  "life": 50,
   "defense": 25,
-  "maxLife": 150,
+  "maxLife": 50,
   "attacks": [
     {
       "name": "Punch",
