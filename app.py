@@ -1,8 +1,6 @@
 from re import T
 from flask import Flask, render_template, request
 import json
-import paramiko
-
 
 #Variables
 app = Flask(__name__)
@@ -37,21 +35,6 @@ def get_path(code : str) :
             return(register[key]["opponent"], register[key]["player"], register[key]["name"])
     raise CodeNotFound(f'{code} not found in static/data/register.json')
 
-def upload_to_server(localpath : str, name : str) :
-    if not ser :
-        raise NotServerMode("WBC not recognized as online server instance")
-        
-    ssh = paramiko.SSHClient()
-    ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    ssh.connect(log['host'], log['port'], log['username'], log['password'])
-
-    transfer = ssh.open_sftp()
-    path = f'/home/ufqkcos/www/{name}.{localpath[-3]:}'
-    transfer.put(localpath, path)
-
-    transfer.close()
-    ssh.close()
-
 def create_opponent(data_dict : dict, name : str):
     data_dict = serialize(data_dict)
     file = open(f'static/data/opponent/{name}.json', 'x')
@@ -73,7 +56,7 @@ def create_opponent(data_dict : dict, name : str):
         print(data_dict)
         r_file = json.load(r_file)
         r_file[data_dict['publicCode']] = {
-            'opponent' : f"../static/data/opponent/{data_dict['themeInput']}.json",
+            'opponent' : f"../static/data/opponent/{data_dict['fileName']}.json",
             "player" : "../static/data/player/testPlayer.json", 
             "name" : data_dict['nameInput']
         }
@@ -131,3 +114,5 @@ def creator_statement():
    create_opponent(result, result['fileName'])
    
    return render_template('index.html')
+
+app.run()
