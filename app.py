@@ -4,7 +4,7 @@ import json
 
 #Variables
 application = Flask(__name__)
-ver = '0.3.5'
+ver = '0.4'
 dev = True
 ser = False
 
