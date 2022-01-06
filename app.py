@@ -3,12 +3,12 @@ from flask import Flask, render_template, request
 import json
 
 #Variables
-app = Flask(__name__)
+application = Flask(__name__)
 ver = '0.3.5'
 dev = True
 ser = False
 
-app.config['MAX_CONTENT_PATH'] = 500000
+application.config['MAX_CONTENT_PATH'] = 500000
 
 #Try to run as server instance
 try :
@@ -80,13 +80,12 @@ def serialize(data_dict : dict):
     return data_dict
             
 
-
 #Router
-@app.route('/')
+@application.route('/')
 def index():
     return render_template('index.html')
 
-@app.route('/battle', methods = ['GET','POST'])
+@application.route('/battle', methods = ['GET','POST'])
 def battle():
     try :
         t_data = get_path(dict(request.form)['code'])
@@ -94,11 +93,11 @@ def battle():
     except CodeNotFound :
         return render_template('index.html', message = 'Code Not Found')
     
-@app.route('/creator')
+@application.route('/creator')
 def creator():
     return render_template('creator.html')
 
-@app.route('/creator_statement', methods = ['GET', 'POST'])
+@application.route('/creator_statement', methods = ['GET', 'POST'])
 def creator_statement():
     
    result      = dict(request.form)
@@ -114,4 +113,4 @@ def creator_statement():
    
    return render_template('index.html')
 
-app.run()
+application.run()
