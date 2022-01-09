@@ -1,6 +1,7 @@
 function attack(victimObject, senderObject, attackObject, puissance) {
     var textZone = document.getElementById('actionDescription')
     textZone.innerText = `${senderObject.name} use ${attackObject.name} against ${victimObject.name}! ${victimObject.name} lose ${puissance} PV\n`
+
 }
 
 function displayAttacks(playerObject, opponentObject) {

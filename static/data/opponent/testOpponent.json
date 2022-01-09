@@ -1,6 +1,7 @@
 {
   "name": "Red Hat",
   "type": "opponent",
+  "color" : "#FF45CC",
   "life": 50,
   "defense": 25,
   "maxLife": 50,

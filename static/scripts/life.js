@@ -1,4 +1,10 @@
-
+function wait(ms)
+  {
+      var d = new Date();
+      var d2 = null;
+      do { d2 = new Date(); }
+      while(d2-d < ms);
+  }
 
 function reduceLife(point, maxLife, battleObject)
 {
@@ -11,7 +17,7 @@ function reduceLife(point, maxLife, battleObject)
             window.history.back();
         }
         newSize = (battleObject.life * 100) / maxLife;
-        document.getElementById("opponentLifebar").style.marginRight = `${100 - newSize}%`;
+        document.getElementById("opponentLifebar").style.marginRight = `${100 - newSize}%`
         doAttack(randomAttack(battleObject), currentPlayer, battleObject);
 
     }else{

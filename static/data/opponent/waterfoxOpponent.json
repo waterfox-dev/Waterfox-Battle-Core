@@ -1,0 +1,24 @@
+{
+    "name": "Waterfox",
+    "type": "opponent",
+    "life": 750,
+    "defense": 650,
+    "maxLife": 750,
+    "attacks": [
+        {
+            "name": "Coding",
+            "description": "Il \u00e9crit des lignes de codes !",
+            "attack": 150,
+            "precision": 80
+        },
+        {
+            "name": "Faire de la musique",
+            "description": "Parce-que MUSIQUE",
+            "attack": 125,
+            "precision": 90
+        }
+    ],
+    "color": "#ffffff",
+    "theme": "waterfoxOpponent",
+    "sprite": "../static/images/waterfoxOpponent.png"
+}

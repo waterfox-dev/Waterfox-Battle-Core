@@ -8,5 +8,10 @@
         "opponent": "../static/data/opponent/alphaOpponent.json",
         "player": "../static/data/player/testPlayer.json",
         "name": "\u03b1 Opponent"
+    },
+    "watercoder": {
+        "opponent": "../static/data/opponent/waterfoxOpponent.json",
+        "player": "../static/data/player/testPlayer.json",
+        "name": "Waterfox"
     }
 }

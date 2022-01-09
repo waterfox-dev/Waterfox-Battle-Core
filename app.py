@@ -46,7 +46,8 @@ def create_opponent(data_dict : dict, name : str):
     n_object['defense'] = int(data_dict['defenseInput'])
     n_object['maxLife'] = int(data_dict['lifeInput'])    
     n_object['attacks'] = data_dict['attacks']
-    n_object['theme'] = data_dict['themeInput'][:-4]
+    n_object['color'] = data_dict['colorInput']
+    n_object['theme'] = data_dict['fileName']
     n_object['sprite'] = f"../static/images/{data_dict['fileName']}.png"
     
     json.dump(n_object, file)

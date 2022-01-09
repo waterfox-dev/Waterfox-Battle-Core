@@ -1,7 +1,6 @@
 function getRandomArbitrary(min, max) {
     return Math.random() * (max - min) + min;
-  }
-  
+  } 
 
 function doAttack(attackObject, victimObject, senderObject)
 {
@@ -9,8 +8,8 @@ function doAttack(attackObject, victimObject, senderObject)
     puissanceOfDefense = getRandomArbitrary(victimObject.defense - 50, victimObject.defense)
     puissance = Math.round((percentOfPuissance * attackObject.attack) / 100 - puissanceOfDefense)
     attack(victimObject, senderObject, attackObject, puissance)
-    sleep(10000)
     reduceLife(puissance, victimObject.maxLife, victimObject)
+    wait(500)
 }
 
 function getAttack(name, playerObject)

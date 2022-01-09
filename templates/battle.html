@@ -4,13 +4,9 @@
 <head>
     <title>Waterfox Battle Core</title>
     <link href="{{url_for('static', filename = 'styles/battle.css')}}" rel="stylesheet">
-    <script>
-        function sleep(ms) {
-            return new Promise(resolve => setTimeout(resolve, ms));
-        }
-    </script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
     <script src="{{url_for('static', filename = 'scripts/opponent.js')}}"></script>
+    <script src="{{url_for('static', filename = 'scripts/backgroundCore.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/actions.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/audio.js')}}"></script>
     <script src="{{url_for('static', filename = 'scripts/life.js')}}"></script>
@@ -49,6 +45,7 @@
             var opponentPath = '{{opponent}}';
             var playerPath = '{{player}}';
     
+  
             initializeText('{{opponentName}}')
     
 
@@ -60,11 +57,13 @@
                     currentOpponent = json;
                     document.getElementById('opponentImage').src = currentOpponent.sprite
                     launchTheme(currentOpponent.theme);
+                    changeBackgroundColor(currentOpponent.color);
                 });
                 $.getJSON(playerPath,
                     function (json) {
                         currentPlayer = json;
                 });
+               
             }
         </script>
     </div>
